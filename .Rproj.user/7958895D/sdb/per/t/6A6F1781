@@ -1,0 +1,17 @@
+{
+    "contents" : "## Put comments here that give an overall description of what your\n## functions do\n\n## Write a short comment describing this function\n\nmakeCacheMatrix <- function(x = matrix()) {\n     \n     \n}\n\n\n## Write a short comment describing this function\n\ncacheSolve <- function(x, ...) {\n     ## Return a matrix that is the inverse of 'x'\n     \n     \n}\n",
+    "created" : 1414106286218.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2385391987",
+    "id" : "6A6F1781",
+    "lastKnownWriteTime" : 1414106341,
+    "path" : "C:/github/general/ProgrammingAssignment2/ProgrammingAssignment2/cmatrix_backup.R",
+    "project_path" : "cmatrix_backup.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

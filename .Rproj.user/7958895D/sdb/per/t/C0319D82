@@ -1,0 +1,17 @@
+{
+    "contents" : "rm(list = ls())  \n\nm <- matrix(c(1:4), 2)     # This will repeat the number 1 to compensate for an otherwise incomplete matrix.\n\nm.trans <- t(m)\nm.inv <- solve(m)\nm\nm.trans\nm.inv\n\nm.arr <- as.data.frame(m)\nmean.r1 <- rowMeans(m.arr[,1])\n\nclass(m)\nclass(m.arr)\n\n\nm.arr[,1]\n\nm.arr <- array(c(1:4),2,2)\n",
+    "created" : 1414095900538.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3767937491",
+    "id" : "C0319D82",
+    "lastKnownWriteTime" : 1414098958,
+    "path" : "C:/github/general/ProgrammingAssignment2/ProgrammingAssignment2/sandbox04.R",
+    "project_path" : "sandbox04.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

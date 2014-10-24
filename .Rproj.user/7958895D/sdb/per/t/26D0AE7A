@@ -1,0 +1,17 @@
+{
+    "contents" : "\n\nmy_ellipsis_function <- function(...) {   ###SAMPLE FUNCTION\n     input_list <- as.list(substitute(list(...)))\n     }\n\n\n###\n\ndf <- data.frame(x=rnorm(5),y=runif(5))\nnames(df) <- 1:2\ndf\ndf$`1`\n#1         2\n#1 -1.2035003 0.6989573\n#2 -1.2146266 0.8272276\n#3  0.3563335 0.0947696\n#4 -0.4372646 0.9765767\n#5 -0.9952423 0.6477714\n#> df$1\n#Error: unexpected numeric constant in \"df$1\"\n#  THIS WORKS!!!  Single backticks...work inside formulass where [\"1\"]  will NOT!! > df$`1`\n#[1] -1.2035003 -1.2146266  0.3563335 -0.4372646 -0.9952423\n\n\nmyhist <- function(x, border=\"blue\", ...){\n     hist(x, border=border, ...)\n}\nset.seed(5)\n#png(\"ellipsis1.png\")\nmyhist(rnorm(1000), breaks=30)\n#dev.off()\nset.seed(5)\n#png(\"ellipsis2.png\")\nmyhist(rnorm(1000)) \n#dev.off()",
+    "created" : 1414030598302.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3888763409",
+    "id" : "26D0AE7A",
+    "lastKnownWriteTime" : 1414069357,
+    "path" : "C:/github/general/ProgrammingAssignment2/ProgrammingAssignment2/sandbox01.R",
+    "project_path" : "sandbox01.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

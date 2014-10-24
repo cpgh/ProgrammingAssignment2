@@ -1,0 +1,17 @@
+{
+    "contents" : "crazy <- function() {\n     \n     x <<- 3.14                   # variable x in the containing environment (global in this case) is updated to be 3.14\n     \n     print(x)                        # since no local variable 'x' exists within function 'crazy' R searches the containing environments\n     \n{ print(x);                     # this is to demonstrate the function, not a code block, is the smallest environment in R\n  \n  x <- 42; print(x)         # local variable 'x' is declared (created) and assigned the value 42; overrides the variable 'x' in\n  \n     }                                  # the containing environment\n\nprint(x)\n\n                         # since local variable 'x' now exists within the function there is no need to search the containing\n\n}                                   # environment (global in this case)\n\n\n\n\nx <- 0\n\ncrazy()\n\n3.14        \n\n3.14\n\n42\n\n42\n\n> x   # variable 'x' outside of the function its updated value after the first statement within function 'crazy()'\n\n[1] 3.14\n",
+    "created" : 1414094218793.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "537683331",
+    "id" : "FEB9D366",
+    "lastKnownWriteTime" : 1414095898,
+    "path" : "C:/github/general/ProgrammingAssignment2/ProgrammingAssignment2/sandbox03.R",
+    "project_path" : "sandbox03.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

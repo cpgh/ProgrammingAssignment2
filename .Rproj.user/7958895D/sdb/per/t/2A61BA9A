@@ -1,0 +1,17 @@
+{
+    "contents" : "### Example: Caching the Mean of a Vector\n\n# In this example we introduce the `<<-` operator which can be used to\n# assign a value to an object in an environment that is different from the\n# current environment. Below are two functions that are used to create a\n# special object that stores a numeric vector and caches its mean.\n\n# The first function, `makeVector` creates a special \"vector\", which is\n# really a list containing a function to\n\n# 1.  set the value of the vector\n# 2.  get the value of the vector\n# 3.  set the value of the mean\n# 4.  get the value of the mean\n\n<!-- -->\n     \n     makeVector <- function(x = numeric()) {\n          m <- NULL\n          set <- function(y) {\n               x <<- y\n               m <<- NULL\n          }\n          get <- function() x\n          setmean <- function(mean) m <<- mean\n          getmean <- function() m\n          list(set = set, get = get,\n               setmean = setmean,\n               getmean = getmean)\n     }\n\n# The following function calculates the mean of the special \"vector\"\n# created with the above function. However, it first checks to see if the\n# mean has already been calculated. If so, it `get`s the mean from the\n# cache and skips the computation. Otherwise, it calculates the mean of\n# the data and sets the value of the mean in the cache via the `setmean`\n# function.\n\ncachemean <- function(x, ...) {\n     m <- x$getmean()\n     if(!is.null(m)) {\n          message(\"getting cached data\")\n          return(m)\n     }\n     data <- x$get()\n     m <- mean(data, ...)\n     x$setmean(m)\n     m\n     \n}\n\n\n##RUN THIS FUNCTION WITH FOLLOWING CODE:\ny <- makeVector(1:100)\ncachemean(y)\n\n### ALTERNATE TEST CODE\nv <- c(1:4)\n# need to hold on to the list returned by makeVector.\n# it references the data implicitly\nproxy <- makeVector(v)\nprint(class(v))\nprint(class(proxy))\n# This call should not print \"getting cached data\"\nvalue <- cachemean(proxy)\nprint(value)\n# This call should print \"getting cached data\"\nvalue <- cachemean(proxy)\nprint(value)",
+    "created" : 1414030278366.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2606675617",
+    "id" : "2A61BA9A",
+    "lastKnownWriteTime" : 1414069357,
+    "path" : "C:/github/general/ProgrammingAssignment2/ProgrammingAssignment2/cachemean.R",
+    "project_path" : "cachemean.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
